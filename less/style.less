@@ -1,34 +1,47 @@
+// out: ../css/style.css
 @import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,700);
+
 body {
   font-family: "Fira Sans", sans-serif;
   color: #444;
 }
+
 article {
   width: 90%;
   margin: 0 auto;
 }
+
 h1 {
   position: relative;
+
+  span {
+    float: left;
+  }
+
+  a {
+    transition: all .4s;
+    opacity: 0;
+    color: #fd9148;
+    font-weight: 300;
+    margin-left: 12px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    a {
+      text-indent: 0;
+      opacity: 1;
+    }
+  }
 }
-h1 span {
-  float: left;
-}
-h1 a {
-  transition: all .4s;
-  opacity: 0;
-  color: #fd9148;
-  font-weight: 300;
-  margin-left: 12px;
-  text-decoration: none;
-}
-h1:hover a {
-  text-indent: 0;
-  opacity: 1;
-}
+
+// Estilos caja Sabias que
+
 .sabias-que {
   font-size: 25px;
   box-sizing: border-box;
 }
+
 .sabias {
   float: left;
   color: #c00;
@@ -38,6 +51,7 @@ h1:hover a {
   padding: 6px 14px;
   margin: 0;
 }
+
 .que {
   float: left;
   color: #fff;
@@ -45,7 +59,9 @@ h1:hover a {
   border: 2px solid #c00;
   padding: 6px 26px;
   margin: 0;
+  //margin-left: -7px;
 }
+
 .span1,
 .span2 {
   float: left;
@@ -54,16 +70,17 @@ h1:hover a {
   height: 50px;
   background-color: #000;
 }
+
 .span2 {
   background-color: #f00;
 }
+
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
+
 .clearfix:after {
-  clear: both;
+    clear: both;
 }

@@ -1,0 +1,229 @@
+// out: ../css/animations.css
+
+html {
+  padding: 3rem;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  background-color: #ccc;
+  width: 300px;
+  -webkit-transition: all 400ms ease;
+          transition: all 400ms ease;
+
+  &:hover {
+    background-color: #11f;
+    margin-left: 10px;
+  }
+
+}
+
+h3 {
+  margin-top: 500px;
+}
+
+button {
+  padding: 1em 2em;
+  border: 0;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  border-bottom: 3px solid darken(tomato, 10%);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    border-bottom-width: 2px;
+    margin-top: 1px;
+
+    .btn-bg {
+      top: 0;
+    }
+  }
+
+  &:active, &:focus {
+    border-bottom-width: 1px;
+    margin-top: 2px;
+  }
+
+  & .btn-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  & .btn-bg {
+    position: absolute;
+    background: -webkit-linear-gradient(top, lighten(tomato, 10%), tomato);
+    background: linear-gradient(to bottom, lighten(tomato, 10%), tomato);
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    -webkit-transition: all 600ms;
+            transition: all 600ms;
+  }
+}
+
+.dropdown {
+  display: inline-block;
+
+  nav {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 600ms;
+            transition: max-height 600ms;
+
+    a {
+      display: block;
+    }
+  }
+
+  &:hover {
+    nav {
+      max-height: 999px;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: lighten(#00f, 20%);
+    color: #fff;
+    padding: 1em 2em;
+    font-family: sans-serif;
+  }
+}
+
+.off-to-left {
+  -webkit-transform: translateX(-3000px);
+      -ms-transform: translateX(-3000px);
+          transform: translateX(-3000px);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+
+  &:hover {
+    -webkit-animation: slideArround 3s infinite reverse;
+            animation: slideArround 3s infinite reverse;
+  }
+}
+
+.active h1 {
+  -webkit-animation: slideInFromLeft 2s forwards;
+          animation: slideInFromLeft 2s forwards;
+}
+
+@-webkit-keyframes slideArround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+    background-color: #f00;
+   }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+    background-color: #0f0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: #00f;
+  }
+  75% {
+    margin-left: 0;
+    margin-top: 50px;
+    background-color: #0ff;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    background-color: #f00;
+  }
+}
+@keyframes slideArround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+    background-color: #f00;
+   }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+    background-color: #0f0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: #00f;
+  }
+  75% {
+    margin-left: 0;
+    margin-top: 50px;
+    background-color: #0ff;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    background-color: #f00;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  100% { -webkit-transform: rotate(359deg); transform: rotate(359deg) }
+}
+@keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  100% { -webkit-transform: rotate(359deg); transform: rotate(359deg) }
+}
+
+@-webkit-keyframes wave {
+  0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  50% { -webkit-transform: rotate(3deg); transform: rotate(3deg) }
+}
+
+@keyframes wave {
+  0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg) }
+  50% { -webkit-transform: rotate(3deg); transform: rotate(3deg) }
+}
+
+#petals {
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+#leaf {
+  -webkit-animation: wave 2s linear infinite;
+          animation: wave 2s linear infinite;
+          -webkit-transform-origin: bottom left;
+              -ms-transform-origin: bottom left;
+                  transform-origin: bottom left;
+}
+
+svg {
+  -webkit-animation: wave 4s linear infinite;
+          animation: wave 4s linear infinite;
+          -webkit-transform-origin: bottom;
+              -ms-transform-origin: bottom;
+                  transform-origin: bottom;
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% { margin-left: -100%; }
+  100% { margin-left: 0;  }
+}
+@keyframes slideInFromLeft {
+  0% { margin-left: -100%; }
+  100% { margin-left: 0;  }
+}
